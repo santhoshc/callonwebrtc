@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<style type="text/css">
+body{
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size:13px;
+}
+.info, .success, .warning, .error, .validation {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding:15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+.info {
+    color: #00529B;
+    background-color: #BDE5F8;
+}
+.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+}
+.warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+}
+.error {
+    color: #D8000C;
+    background-color: #FFBABA;
+}
+</style>
+</head>
+<body onLoad="display()">
+<script type="text/javascript">
+display = function() {
+	var error = "{{error}}";
+	if (error == "") { 
+	document.getElementById('err').style.visibility = 'hidden';
+	}
+}
+</script>
+<h1>WebRTC Video Chat</h1>
+<br/><br/><br/>
+
+<form action="login" method="post">
+<div align="center">
+  UserName    : <input type="text" name="username" /><br/>
+  Password : <input type="password" name="password" /><br/>
+  Bridge ID:  <input type="text" name="bridgeid" /><br/><br/> 
+  <input type="radio" name="calltype" value="peer" /> P-P 
+	<input type="radio" name="calltype" value="conf" checked/> Bridge<br/><br/><br/>
+  <input type="submit" value="Login" />
+  <div class="error" id="err">
+  "{{error}}"
+  </div>
+  </div>
+</form> 
+
+
+</body>
+</html>
